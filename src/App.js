@@ -62,10 +62,9 @@ class App extends Component {
           username: false,
           email: false,
           password: false,
-          accept: true,
+          accept: false,
         }
       }) 
-      console.log('Formularz wyslany')
     } else {
       this.setState({
         errors: {
