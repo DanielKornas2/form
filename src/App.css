@@ -1,6 +1,7 @@
 form {
-  width: 300px;
+  width: 290px;
   margin: 0 auto;
+  padding: 5px;
   font-size: 11px;
   display: flex;
   flex-direction: column;
@@ -9,7 +10,7 @@ form {
 }
 
 label {
-  width: 300px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
