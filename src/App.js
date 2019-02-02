@@ -56,7 +56,7 @@ class App extends Component {
         email: "",
         password: "",
         accept: false,
-        message: 'Formularz został wysłany',
+        message: 'Formularz został wysłany!',
     
         errors: {
           username: false,
@@ -115,12 +115,12 @@ class App extends Component {
   }
 
   componentDidUpdate(){
-    // po 3 sekundach od wysłania kasuję wiadomość o wysłaniu formularza, czyli zeruje message w state
+    // po 4 sekundach od wysłania kasuję wiadomość o wysłaniu formularza, czyli zeruje message w state
     if(this.state.message !== ''){
       setTimeout(() => 
       this.setState({
         message: '',
-      }), 3000)
+      }), 4000)
     }
   }
 
@@ -128,25 +128,25 @@ class App extends Component {
     return (
       <div className="App">
         <form onSubmit= {this.handleSubmit} noValidate>
-          <label htmlFor="user">Imię:
+          <label htmlFor="user">Imię: 
           <input type="text" id="user" name="username" value={this.state.username} onChange={this.handleChange} />
+          </label>
           {/* && - skrócony zapis ifa ? , oznacza, ze to co jest za && wykona sie tylko kiedy jest true.
           tzn jezeli jest error w state (true), to pokaze komunikat o bledzie */}
           {this.state.errors.username && <span>
           {this.warnings.username_incorrect}</span>}
-          </label>
 
           <label htmlFor="email">Email:
           <input type="email" id="email" name="email" value={this.state.email} onChange={this.handleChange} />
+          </label>
           {this.state.errors.email && <span>
           {this.warnings.email_incorrect}</span>}
-          </label>
 
           <label htmlFor="password">Hasło:
           <input type="password" id="password" name="password" value={this.state.password} onChange={this.handleChange} />
+          </label>
           {this.state.errors.password && <span>
           {this.warnings.password_incorrect}</span>}
-          </label>
 
           <label htmlFor="accept">
           <input type="checkbox" id="accept" name="accept" checked={this.state.accept} onChange={this.handleChange} /> Akceptuję regulamin.
